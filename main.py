@@ -14,20 +14,11 @@ using google chrome browser
 
 logging.basicConfig(level=logging.ERROR)
 
-chrome_options = Options()
-chrome_options.add_experimental_option("detach", True)
-
-""" OPTION TO DETACH BROWSER vvvvv
-chrome_options.add_experimental_option("detach", True)
-"""
-
-
-
-
+chrome_options = webdriver.ChromeOptions()
 
 driver = webdriver.Chrome(options= chrome_options)
 driver.get("https://www.bhphotovideo.com/c/product/1542675-REG/fujifilm_x100v_digital_camera_silver.html")
-#driver.maximize_window()
+
 
 stock_element = driver.find_element(By.CLASS_NAME, "statusMedium_ZC_6IRXKyD")
 status = stock_element.text
